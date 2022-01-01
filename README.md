@@ -3,9 +3,11 @@
 * **Archiving**
     * DownloadDiscordServer: makes a backup of a Discord server with all it's media in the current directory
     * DownloadDiscordDMs: makes a backup of Discord DMs in a folder called "DMs"
-    * DownloadYTDL: downloads youtube videos and all their data from a source file
-
+    
     note: you should either set the $DISCORD_TOKEN variable or replace it with your token ([how to get token](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs))
+    
+    * DownloadYTDL: downloads youtube videos and all their data from a source file
+    
     note: make sure you change the varibales in DownloadYTDL.sh
 
 * **System**
