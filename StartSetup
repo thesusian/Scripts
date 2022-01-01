@@ -1,0 +1,56 @@
+#!/bin/bash
+
+TERMINAL=terminator
+
+echo "sudo password for OpenRGB and mounting drives"
+sudo -v
+
+echo "--- Killing Apps ---"
+sudo killall openrgb
+killall ivpn-ui
+killall electron-mail
+
+echo "--- Email Clients ---"
+i3-msg split h
+nohup sh -c 'thunderbird & electron-mail' > /dev/null &
+sleep 4
+
+echo "--- Terminals Setup ---"
+i3-msg focus left
+i3-msg move down
+i3-msg focus up
+i3-msg focus left
+i3-msg move right
+i3-msg move right
+i3-msg move right
+i3-msg resize grow width 10 px or 10 ppt
+i3-msg split v
+$TERMINAL &&
+i3-msg split h
+$TERMINAL &&
+i3-msg split v
+$TERMINAL &&
+i3-msg split h
+$TERMINAL
+$TERMINAL
+i3-msg focus left
+i3-msg focus left
+i3-msg focus left
+i3-msg resize grow width 20 px or 20 ppt
+
+echo "--- OpenRGB ---"
+sudo openrgb --gui -p Gruvbox1 &
+sleep 4 
+i3-msg kill
+
+echo "--- IVPN ---"
+ivpn-ui > /dev/null &
+
+echo "--- Mounting Drives ---"
+sudo mount /dev/sda1 /storage-1/
+sudo mount /dev/sdc1 /storage-2/
+
+echo "--- TearFree on ---"
+xrandr --output HDMI-A-0 --set TearFree on
+
+clear

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Run in a folder for the specified server, or your stuff will be all over the place"
+discord-chat-exporter-cli exportguild -t $DISCORD_TOKEN -g $1 --media --reuse-media

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DOWNLOAD_DIR="/storage-1/Archive/Youtube/Downloads"
+SCRIPT_DIR="/storage-1/Archive/Youtube/Scripts"
+SOURCE_LIST="Source.txt"
+
+yt-dlp --sleep-interval 5 --max-sleep-interval 30 --ignore-errors --no-continue --restrict-filenames --no-overwrites --add-metadata --write-description --write-info-json --write-annotations --write-thumbnail --embed-thumbnail --all-subs --embed-subs --download-archive Downloaded.txt --output "$DOWNLOAD_DIR/%(channel)s - %(channel_id)s/%(title)s - %(upload_date)s - %(id)s/%(title)s - %(upload_date)s.%(ext)s" --merge-output-format "mkv" --batch-file "$SCRIPT_DIR/$SOURCE_LIST"

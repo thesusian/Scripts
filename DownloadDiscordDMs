@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkdir -p DMs
+discord-chat-exporter-cli exportdm -t $DISCORD_TOKEN --media --reuse-media -o DMs

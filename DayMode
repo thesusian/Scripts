@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xrandr --output HDMI-A-0 --brightness 1
+redshift -x
+xrandr --output HDMI-A-0 --set TearFree on
